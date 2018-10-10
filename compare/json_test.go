@@ -26,11 +26,11 @@ func TestJSON(t *testing.T) {
 			expected:    modifiedWildcard,
 		},
 	} {
-		output, err := JSON(test.a, test.b)
+		c, err := JSON(test.a, test.b)
 		if err != nil {
 			t.Errorf("%s - expecting no error, got %s", test.description, err)
-		} else if output != test.expected {
-			t.Errorf("%s \nexpecting: %s\ngot: \n%s", test.description, test.expected, output)
+		} else if c.output != test.expected {
+			t.Errorf("%s \nexpecting: %s\ngot: \n%s", test.description, test.expected, c.output)
 		}
 	}
 }
